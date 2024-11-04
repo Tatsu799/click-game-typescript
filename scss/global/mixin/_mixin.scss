@@ -1,0 +1,27 @@
+@use "../setting" as *;
+
+@mixin flex($justify: center) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards,
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    delay: $delay;
+    timing-function: $timing-function;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}

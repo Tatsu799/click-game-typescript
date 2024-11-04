@@ -1,0 +1,288 @@
+@use "../global" as *;
+
+.main-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  @include mq(sp) {
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .mainPage-container {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1300px;
+    width: 100%;
+    height: 80vh;
+    background-color: rgb(33, 41, 51);
+    border: solid 3px rgba(255, 255, 255, 0.7);
+    @include mq(sp) {
+      position: block;
+      width: 100%;
+      height: 100%;
+    }
+    .box-left {
+      width: 40%;
+      height: 100%;
+      @include mq(sp) {
+        width: 100%;
+      }
+      .count-burgers {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 5%;
+        text-align: center;
+        background-color: rgb(53, 72, 110);
+        border: solid 3px rgba(255, 255, 255, 0.4);
+        color: #fff;
+        @include mq(sp) {
+          position: absolute;
+          top: 0;
+          left: 2.5%;
+          width: 95%;
+        }
+        .burgers {
+          font-size: 1.25rem;
+        }
+      }
+      .image-box {
+        position: relative;
+        width: 90%;
+        height: 61vh;
+        margin: 6.5% auto;
+        border: solid 3px rgba(255, 255, 255, 0.4);
+        background-color: rgb(53, 72, 110);
+        @include mq(sp) {
+          position: absolute;
+          top: 27%;
+          left: 2.5%;
+          width: 95%;
+          height: 18vh;
+        }
+
+        p {
+          position: absolute;
+          top: 11%;
+          left: 25%;
+          display: inline;
+          color: #fff;
+          font-weight: 700;
+          font-size: 2rem;
+          @include mq(pc_max) {
+            top: 11%;
+            left: 20%;
+          }
+          @include mq(tab) {
+            top: 15%;
+            left: 18%;
+            font-size: 1.5rem;
+          }
+          @include mq(sp) {
+            font-size: 1rem;
+            top: 0;
+            left: 35%;
+          }
+        }
+        .image-wrapper {
+          position: relative;
+          top: 30%;
+          left: 20%;
+          width: 100%;
+          height: 90%;
+          @include mq(sp) {
+            position: static;
+            width: 50%;
+            margin: 12% 0 0 35%;
+          }
+        
+          img {
+            width: 60%;
+            height: 40%;
+            object-fit: contain;
+            overflow: hidden;
+            @include mq(sp) {
+              height: 55%;
+            }
+          }
+          .click-burger {
+            transform: translate(0, 0);
+            animation: .2s 0s click-burger ;
+          }
+        }
+      }
+    }
+    .box-right {
+      width: 60%;
+      height: 100%;
+      .user-info-box {
+        width: 100%;
+        height: auto;
+        @include mq(sp) {
+          position: absolute;
+          top: 15%;
+          left: 4.5%;
+          width: 98%;
+        }
+        .user-info {
+          display: flex;
+          flex-wrap: wrap;
+          width: 97%;
+          margin: 3.5% auto;
+          margin-right: 5%;
+          border: solid 2px rgba(255, 255, 255, 0.4);
+          background-color: rgb(53, 72, 110);
+          .name,
+          .age,
+          .days,
+          .money {
+            width: 50%;
+            border: solid 1px rgba(255, 255, 255, 0.4);
+            color: #fff;
+            text-align: center;
+            line-height: 2.2;
+            
+          }
+        }
+      
+      }
+      .box-container {
+        width: 97%;
+        height: 77%;
+        margin: 4% 5% 0 0;
+        border: solid 2px rgba(255, 255, 255, 0.4);
+        background-color: rgb(53, 72, 110);
+        overflow: scroll;
+        @include mq(pc_max) {
+          height: 77%;
+        }
+        @include mq(sp) {
+          position: absolute;
+          top: 48%;
+          left: 2.5%;
+          width: 95%;
+          height: 40%;
+        }
+        .box-purchase {
+          .purchase-item {
+            display: flex;
+            width: 100%;
+            border: solid 2px rgba(255, 255, 255, 0.4);
+            .purchase-img {
+              width: 18%;
+              height: 10%;
+              margin: 0.8% 5% 0.8% 0.8%;
+              padding: 2% 0 2% 2%;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: scale-down;
+              }
+            }
+            .purchase-info {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 70%;
+              margin: 0.8% 0.8% 0.8% 0;
+              border-left: none;
+              .items-info {
+                display: inline-block;
+                width: 55%;
+                color: #fff;
+                font-weight: 700;
+                @include mq(sp) {
+                  font-size: 0.9rem;
+                }
+                .item-name {
+                  display: inline-block;
+                  width: 100%;
+                  font-size: 1.25rem;
+                  font-weight: 700;
+                  @include mq(sp) {
+                    font-size: 1rem;
+                  }
+                }
+                .item-price {
+                  display: inline-block;
+                  width: 100%;
+                }
+              }
+            }
+            .item-count {
+              color: #fff;
+              text-align: right;
+              .Possession {
+                font-size: 1.25rem;
+                font-weight: 700;
+              }
+              .get-money {
+                width: 100%;
+                color:#28a745;
+              }
+            }
+          }
+        }
+      }
+
+      .reset-save-button {
+        display: flex;
+        justify-content: end;
+        margin: 0 2.5% 0 0;
+        @include mq(sp) {
+          position: absolute;
+          top: 94%;
+          left: 0;
+        }
+        .reset-button,
+        .save-button {
+          width: 3%;
+          height: 4%;
+          margin: 0 1.5% 0 0;
+          @include mq(pc_max) {
+            width: 4%;
+            height: 4%;
+          }
+          @include mq(sp) {
+            width: 7%;
+            height: 7%;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+@keyframes click-burger {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
