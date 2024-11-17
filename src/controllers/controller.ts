@@ -68,6 +68,7 @@ export class Controller {
             alert('User name is required.');
           } else {
             const userData: string = localStorage.getItem(userName)!;
+            console.log(userData);
 
             if (userData !== null) {
               if (config.mainPage) {
